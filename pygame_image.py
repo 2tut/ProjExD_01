@@ -11,6 +11,7 @@ def main():
     fg_img = pg.image.load("ex01/fig/3.png")
     fg_img = pg.transform.flip(fg_img, True, False)
     fg_img_rotated = pg.transform.rotate(fg_img, 10)
+    fg_img_list = [fg_img, fg_img_rotated]
 
     tmr = 0
     while True:
