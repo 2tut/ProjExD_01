@@ -20,7 +20,7 @@ def main():
 
         screen.blit(bg_img, [0, 0])
 
-        screen.blit(fg_img_list[tmr % 2], [tmr%1600, 200])
+        screen.blit(fg_img_list[tmr % len(fg_img_list)], [tmr%1600, 200])
         pg.display.update()
 
         tmr += 1
