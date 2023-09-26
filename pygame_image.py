@@ -1,6 +1,6 @@
 import sys
 import pygame as pg
-
+import math
 
 def main():
     pg.display.set_caption("はばたけ！こうかとん")
@@ -12,7 +12,13 @@ def main():
     fg_img = pg.image.load("ex01/fig/3.png")
     fg_img_flipped = pg.transform.flip(fg_img, True, False)
     fg_img_rotated = pg.transform.rotate(fg_img_flipped, 10)
-    fg_img_list = [fg_img, fg_img_rotated]
+
+    fg_img_list = []
+    fg_img_list_length = 50
+    for i in range(fg_img_list_length):
+        angle = 20*math.sin(math.pi*i/fg_img_list_length) - 5
+        img = pg.transform.rotate(fg_img_rotated, angle)
+        fg_img_list.append(img)
 
     tmr = 0
     while True:
