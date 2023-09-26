@@ -4,7 +4,7 @@ import math
 
 def main():
     pg.display.set_caption("はばたけ！こうかとん")
-    screen = pg.display.set_mode((1600, 600))
+    screen = pg.display.set_mode((800, 600))
     clock  = pg.time.Clock()
     bg_img = pg.image.load("ex01/fig/pg_bg.jpg")
     bg_img_flipped = pg.transform.flip(bg_img, True, False)
