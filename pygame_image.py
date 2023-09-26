@@ -25,8 +25,11 @@ def main():
         for event in pg.event.get():
             if event.type == pg.QUIT: return
 
-        screen.blit(bg_img, [-(tmr%1600), 0])
-        screen.blit(bg_img_flipped, [1600-(tmr%1600), 0])
+        bg_x = tmr%3200
+
+        screen.blit(bg_img, [-bg_x, 0])
+        screen.blit(bg_img_flipped, [1600-bg_x, 0])
+        screen.blit(bg_img, [3200-bg_x, 0])
 
         screen.blit(fg_img_list[tmr % len(fg_img_list)], [300, 200])
         pg.display.update()
